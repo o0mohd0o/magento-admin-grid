@@ -31,7 +31,7 @@ class AddSampleBlogPosts implements DataPatchInterface
     public function apply()
     {
         $this->moduleDataSetup->startSetup();
-        
+
         $data = [
             [
                 'title' => 'First Blog Post',
@@ -52,14 +52,14 @@ class AddSampleBlogPosts implements DataPatchInterface
                 'status' => 0
             ]
         ];
-        
+
         $this->moduleDataSetup->getConnection()->insertMultiple(
             $this->moduleDataSetup->getTable('itcforu_blogpost'),
             $data
         );
-        
+
         $this->moduleDataSetup->endSetup();
-        
+
         return $this;
     }
 
